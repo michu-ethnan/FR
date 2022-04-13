@@ -6,8 +6,8 @@ public class MainMenu {
 
     public static Target FIRST_MAIN_CATEGORY = Target.the("First Main Category").locatedBy("(//div[@data-test='main-categories'])[2]/button[1]");
     public static Target SEARCH_BAR = Target.the("Search bar").locatedBy("//input[@data-test='search-desktop']");
-    public static Target MINI_CART_BUTTON = Target.the("Mini cart button").locatedBy("(//div[@data-test='mini-cart'])[1]");
-    public static Target MINI_CART_BUTTON_AFTER_LOGIN = Target.the("Mini cart button after login").locatedBy("(//div[@data-test='mini-cart'])[1]");
+    public static Target MINI_CART_BUTTON = Target.the("Mini cart button").locatedBy("//div[@data-test='mini-cart']");
+    public static Target MINI_CART_BUTTON_AFTER_LOGIN = Target.the("Mini cart button after login").locatedBy("//div[@data-test='mini-cart']");
     public static Target CATEGORY_BUTTON = Target.the("Category button").locatedBy("//div[@test-data='main-categories" +
             "']");
 

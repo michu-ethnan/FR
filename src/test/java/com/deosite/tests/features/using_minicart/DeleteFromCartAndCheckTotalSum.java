@@ -35,6 +35,7 @@ import static com.deosite.tests.pages.CheckoutPage.DELETE_PRODUCT_BUTTON_AT_CHEC
 import static com.deosite.tests.pages.MiniCart.*;
 import static com.deosite.tests.pages.PaymentPage.DELETE_PRODUCT_BUTTON_ON_PAYMENT_PAGE;
 import static com.deosite.tests.pages.PaymentPage.PLACE_ORDER_BUTTON;
+import static com.deosite.tests.pages.ProductPage.OTHER_PRODUCTS_HEADING;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
@@ -51,29 +52,34 @@ public class DeleteFromCartAndCheckTotalSum {
                 ClickCategory.byCategoryNumber(6),
                 Open.productPageByPosition(0),
                 AddProduct.toCart(),
+                WaitUntil.the(CLOSE_ALERT_BOX_BUTTON, isPresent()),
                 Click.on(CLOSE_ALERT_BOX_BUTTON),
                 WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),
                 MoveMouseDown.move(),
                 ReturnToPreviousPage.goToPreviousPage(),
                 Open.productPageByPosition(5),
                 AddProduct.toCart(),
+                WaitUntil.the(CLOSE_ALERT_BOX_BUTTON, isPresent()),
                 Click.on(CLOSE_ALERT_BOX_BUTTON),
                 WaitUntil.the(MainMenu.SEARCH_BAR, isPresent()),
                 MoveMouseDown.move(),
                 ReturnToPreviousPage.goToPreviousPage(),
                 Open.productPageByPosition(8),
                 AddProduct.toCart(),
-                Click.on(CLOSE_ALERT_BOX_BUTTON),
-                //WaitUntil.the(ALERT_BOX, isNotVisible()),
+                WaitUntil.the(CLOSE_ALERT_BOX_BUTTON, isPresent()),
+                //Click.on(CLOSE_ALERT_BOX_BUTTON),
+                // WaitUntil.the(SUBMIT_BUTTON, isNotPresent()),
+               // MoveMouse.to(OTHER_PRODUCTS_HEADING),
+               // Scroll.to(MiniCart.MINICART_BUTTON),
                 Click.on(MINICART_BUTTON)
-                //WaitUntil.the(DELETE_PRODUCT_BUTTON, isPresent())
+                //\WaitUntil.the(DELETE_PRODUCT_BUTTON, isPresent())
         );
     }
 
     @And("she has three products at checkout")
     public void that_actor_has_three_products_at_checkout() {
         theActorInTheSpotlight().attemptsTo(
-                WaitUntil.the(GO_TO_CHECKOUT_BUTTON, isPresent()),
+                WaitUntil.the(GO_TO_CHECKOUT_BUTTON, isClickable()),
                 Open.checkoutPage(),
                 WaitUntil.the(EMAIL_INPUT, isPresent()).forNoMoreThan(50).seconds()
         );

@@ -36,8 +36,8 @@ public class AddProductToCartAndOrder {
     public void that_actor_adds_product_to_cart(String actor) {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
-                ClickCategory.byCategoryNumber(5),
-                Open.productPageByPosition(0),
+                ClickCategory.byCategoryNumber(6),
+                Open.productPageByPosition(2),
                 AddProduct.toCart()
 
         );
@@ -46,7 +46,7 @@ public class AddProductToCartAndOrder {
     @When("he attempts to order it as {word} using courier delivery")
     public void actor_attempts_to_order_it_as_selected_user_type_using_selected_delivery_type(String userType) {
         theActorInTheSpotlight().attemptsTo(
-                Open.miniCart(),
+                Click.on(MiniCart.MINICART_BUTTON),
                 Open.checkoutPage(),
                 WaitUntil.the(EMAIL_INPUT, isPresent()).forNoMoreThan(50).seconds(),
                 FillInBillingData.type(userType)

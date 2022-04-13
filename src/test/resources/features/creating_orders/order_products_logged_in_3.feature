@@ -35,7 +35,7 @@ Feature: Order products logged in-3
     When he orders "mug" using courier delivery
     And he changes billing address
     And he changes shipping address
-    And he selects cashOnDelivery payment
+    And he selects paypal payment
     Then he should ensure that he is on the payment page
 
 

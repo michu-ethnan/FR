@@ -22,6 +22,7 @@ import java.math.BigDecimal;
 
 import static com.deosite.tests.pages.Alert.ALERT_BOX;
 import static com.deosite.tests.pages.MiniCart.*;
+import static com.deosite.tests.pages.ProductPage.OTHER_PRODUCTS_HEADING;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
@@ -37,8 +38,8 @@ public class CalculateTotalSumInMinicart {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
                 ClickCategory.byCategoryNumber(6),
-                Open.productPageByPosition(0)
-                );
+                Open.productPageByPosition(5)
+        );
     }
 
     @And("she sees a product price")
@@ -50,6 +51,8 @@ public class CalculateTotalSumInMinicart {
     public void actor_calculates_the_total_sum_in_minicart() {
         theActorInTheSpotlight().attemptsTo(
                 AddProduct.toCart(),
+                Scroll.to(OTHER_PRODUCTS_HEADING),
+                Scroll.to(MiniCart.MINICART_BUTTON),
                 Open.miniCart(),
                 Click.on(QUANTITY_PICKER),
                 IncreaseNumberOfProducts.byAmountNumber(1),

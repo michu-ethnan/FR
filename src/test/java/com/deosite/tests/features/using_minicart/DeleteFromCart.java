@@ -55,13 +55,13 @@ public class DeleteFromCart {
         theActorInTheSpotlight().attemptsTo(
                 WaitUntil.the(DELETE_PRODUCT_BUTTON, isClickable()),
                 Click.on(DELETE_PRODUCT_BUTTON),
-                Ensure.that(EMPTY_CART_MESSAGE).isDisplayed()
+                WaitUntil.the(EMPTY_CART_MESSAGE, isPresent())
         );
     }
 
     @Then("she should see the cart is empty message")
     public void actor_should_see_that_the_cart_is_empty() {
-        theActorInTheSpotlight().should(seeThat(EmptyCartMessage.value(), containsString("V košíku nemáte žádné produkty")
+        theActorInTheSpotlight().should(seeThat(EmptyCartMessage.value(), containsString("No hay productos en el carrito")
         ));
 
     }

@@ -9,3 +9,4 @@ Feature: Sort products by price, lowest first
     And she sees the value of the second price
     Then she should see that the sort is correct
 
+

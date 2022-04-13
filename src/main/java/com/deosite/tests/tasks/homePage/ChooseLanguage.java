@@ -32,9 +32,9 @@ public class ChooseLanguage implements Task {
             SELECT_LANGUAGE.resolveFor(actor).selectByValue("pl");
 
         }
-        if (chooseLanguage.contains("Spanish")){
+        if (chooseLanguage.contains("Czech")){
             actor.attemptsTo();
-            SELECT_LANGUAGE.resolveFor(actor).selectByValue("es");
+            SELECT_LANGUAGE.resolveFor(actor).selectByValue("cz");
 
         }
         if (chooseLanguage.contains("France")){

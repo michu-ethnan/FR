@@ -27,11 +27,11 @@ import static com.deosite.tests.pages.Alert.ALERT_BOX;
 import static com.deosite.tests.pages.Alert.CLOSE_ALERT_BOX_BUTTON;
 import static com.deosite.tests.pages.LoginPage.LOGIN_BUTTON;
 import static com.deosite.tests.pages.LoginPage.SUBMIT_BUTTON;
-import static com.deosite.tests.pages.ProductPage.ADD_TO_CART_BUTTON;
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.*;
+import static net.serenitybdd.screenplay.questions.WebElementQuestion.the;
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -73,13 +73,12 @@ public class EditAddress {
     @And("she adds a {word}")
     public void actor_adds_a_new_address(String userType) {
         theActorInTheSpotlight().attemptsTo(
-                FillInAddressForm.type(userType),
-                WaitUntil.the(SUBMIT_BUTTON, isNotPresent())
+                FillInAddressForm.type(userType)
         );
     }
 
     @And("she saves it")
-    public void actor_saves_it()   {
+    public void actor_saves_it() {
         theActorInTheSpotlight().attemptsTo(
                 Click.on(SUBMIT_NEW_ADDRESS_BUTTON),
                 WaitUntil.the(ALERT_BOX, isPresent())
@@ -87,11 +86,13 @@ public class EditAddress {
 
     }
 
-    @Then("she should see that it was saved with popup saying address saved")
-    public void actor_should_see_that_it_was_saved(){
+    @Then("she should see a popup saying address saved")
+    public void actor_should_find_this_address_in_the_address_book() {
         theActorInTheSpotlight().attemptsTo(
                 Ensure.that(SUBMIT_NEW_ADDRESS_BUTTON).isNotDisplayed()
         );
 
+
     }
+
 }

@@ -60,9 +60,7 @@ public class ApplyRangeFilterRefreshAndGoToNextPage {
     @And("she hits the refresh button")
     public void actor_hits_the_refresh_button() {
         theActorInTheSpotlight().attemptsTo(
-                RefreshPage.refresh(),
-                WaitUntil.the(CLOSE_NEWSLETTER_POPUP, isPresent()),
-                Click.on(MainMenu.CLOSE_NEWSLETTER_POPUP)
+                RefreshPage.refresh()
         );
     }
 

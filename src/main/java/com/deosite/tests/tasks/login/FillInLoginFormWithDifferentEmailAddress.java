@@ -46,7 +46,9 @@ public class FillInLoginFormWithDifferentEmailAddress implements Task {
                 WaitUntil.the(SUBMIT_BUTTON, isNotPresent()),
                 WaitUntil.the(MY_ACCOUNT_BUTTON, isClickable()),
                 Open.accountPage(),
+                WaitUntil.the(SUBMIT_BUTTON, isNotPresent()),
                 WaitUntil.the(AccountPage.EMAIL_ADDRESS, isPresent())
+
         );
     }
 

@@ -18,6 +18,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.actions.MoveMouse;
 import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
@@ -81,12 +82,11 @@ public class OrderProductsLoggedIn {
         theActorInTheSpotlight().attemptsTo(
                 Search.forProductByTranslatedKeyword(product),
                 WaitUntil.the(CategoryPage.PAGINATION_ARROW, isPresent()),
-                Open.productPageByPosition(3),
+                Open.productPageByPosition(0),
                 AddProduct.toCart(),
                 Click.on(MINI_CART_BUTTON_AFTER_LOGIN),
                 Open.checkoutPage(),
-                WaitUntil.the(CheckoutPage.EMAIL_INPUT, isPresent()).forNoMoreThan(100).seconds(),
-                WaitUntil.the(CheckoutPage.SUBMIT_BUTTON, isPresent()).forNoMoreThan(50).seconds()
+                WaitUntil.the(CheckoutPage.EMAIL_INPUT, isPresent()).forNoMoreThan(100).seconds()
         );
     }
 
@@ -108,9 +108,11 @@ public class OrderProductsLoggedIn {
     public void actor_changes_shipping_address() {
         theActorInTheSpotlight().attemptsTo(
                 ChangeShippingAddress.changeShippingAddress(),
-                WaitUntil.the(CheckoutPage.SUBMIT_BUTTON, isClickable()).forNoMoreThan(50).seconds()
+                MoveMouse.to(CheckoutPage.SUBMIT_BUTTON)
         );
+
     }
+
 
     @And("he selects {word} payment")
     public void actor_pays_using_selected_payment(String paymentType) {

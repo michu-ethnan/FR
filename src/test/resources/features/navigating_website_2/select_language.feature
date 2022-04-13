@@ -2,7 +2,7 @@ Feature: Select language
 
   A customer should be able to select language.
 
-  Scenario: Select Czech
+  Scenario: Select German
     Given that Neveah wants to change the language
     When she selects German from the list
     Then she should be on the German page
@@ -14,16 +14,16 @@ Feature: Select language
     Then she should be on the Poland page
     And she should see that the homepage is working
 
-  Scenario: Select Spanish
+  Scenario: Select Czech
     Given that Neveah wants to change the language
-    When she selects Spanish from the list
-    Then she should be on the Spanish page
+    When she selects Czech from the list
+    Then she should be on the Czech page
     And she should see that the homepage is working
 
-  Scenario: Select France
+  Scenario: Select Spain
     Given that Neveah wants to change the language
-    When she selects France from the list
-    Then she should be on the France page
+    When she selects Spain from the list
+    Then she should be on the Spain page
     And she should see that the homepage is working
 
   Scenario: Select Italy

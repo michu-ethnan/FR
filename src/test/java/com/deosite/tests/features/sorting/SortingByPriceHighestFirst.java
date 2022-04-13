@@ -94,7 +94,7 @@ public void actor_sees_second_price(){
     theActorInTheSpotlight().attemptsTo(
             Scroll.to(SEARCH_BAR),
             ReturnToPreviousPage.goToPreviousPage(),
-            Open.productPageByPosition(10)
+            Open.productPageByPosition(7)
     );
     secondProductPrice= ProductPrice.price().answeredBy(theActorInTheSpotlight());
 }

@@ -41,7 +41,7 @@ public class BrowseHomePage {
     }
     @Then ("she should be on the homepage and make sure the objects are present")
     public void alex_should_be_on_the_home_page(){
-        theActorInTheSpotlight().should(seeThat(PageTitle.title(), containsString("DAJAR.cz - zahradní nábytek a nádobí")));
+        theActorInTheSpotlight().should(seeThat(PageTitle.title(), containsString("DAJAR.fr - Meubles de jardin, cuisine et arts de la table")));
         theActorInTheSpotlight().attemptsTo(
                 Ensure.that(HomePage.DAJAR_LOGO).isDisplayed(),
                 Ensure.that(HomePage.MAIN_BANNER).isDisplayed(),
@@ -77,10 +77,6 @@ public class BrowseHomePage {
                 Scroll.to(INSTAGRAM),
                 Ensure.that(INSTAGRAM).isEnabled(),
                 Ensure.that(INSTAGRAM).isDisplayed(),
-                Scroll.to(NEWS_LETTER),
-                Ensure.that(NEWS_LETTER).isDisplayed(),
-                WaitUntil.the(NEWS_LETTER, isClickable()),
-                Ensure.that(NEWS_LETTER).isEnabled(),
                 Scroll.to(FOOTER),
                 Ensure.that(FOOTER).isDisplayed(),
                 Ensure.that(FOOTER_ELEMENTS).isEnabled(),

@@ -1,10 +1,10 @@
 package com.deosite.tests.i18n;
 
 import com.deosite.tests.model.account.NewAddressForm;
-import com.deosite.tests.model.login.LoginForm;
 import com.deosite.tests.model.login.DifferentLoginForm;
-import com.deosite.tests.model.order.Personal;
+import com.deosite.tests.model.login.LoginForm;
 import com.deosite.tests.model.order.Company;
+import com.deosite.tests.model.order.Personal;
 import com.deosite.tests.model.order.WithoutEmailAddress;
 import com.deosite.tests.model.register.RegisterForm;
 

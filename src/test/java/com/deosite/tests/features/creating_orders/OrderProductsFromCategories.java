@@ -45,12 +45,11 @@ public class OrderProductsFromCategories {
         theActorCalled(actor).wasAbleTo(
                 Setup.site(),
                 ClickCategory.byCategoryNumber(8),
-                WaitUntil.the(CATEGORY_HEADER, isPresent()),
                 MoveMouseToTop.move(),
+                WaitUntil.the(CATEGORY_HEADER, isPresent()),
                 ClickBrand.byBrand(0)
         );
 }
-
 
 @When("she adds a product from category page")
     public void alex_adds_product_from_category_page(){

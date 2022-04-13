@@ -33,6 +33,7 @@ public class SearchByKeyword {
         theActorInTheSpotlight().attemptsTo(Search.forProductByTranslatedKeyword(keyword));
         WaitUntil.the(SearchPage.PRODUCTS_TITLE, isPresent()).forNoMoreThan(100).seconds();
     }
+
     @Then("(s)he should see that the first product contains keyword {word}")
     public void actor_should_see_that_the_first_product_contains_keyword(String keyword) {
         theActorInTheSpotlight().should(seeThat(Product.titleOfAProductOnSearchPageByPosition(0), containsString(

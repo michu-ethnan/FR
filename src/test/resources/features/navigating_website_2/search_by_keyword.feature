@@ -7,5 +7,5 @@ Feature: Search by keyword
 
   Scenario: Should list items related to a specified keyword
     Given that Sasha wants to search for a product
-    When he searches for a cup by keyword
+    When he searches for a mug by keyword
     Then he should see that the first product contains keyword mug
