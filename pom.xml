@@ -268,7 +268,7 @@
                                      <include>**/OrderingLoggedInSuite_2.java</include>
                                       <include>**/OrderingLoggedInSuite_3.java</include>
                                    <include>**/FilteringTestSuite*.java</include>
-                                     <include>**/LoggingInSuite*.java</include>
+                                      <include>**/LoggingInSuite*.java</include>
                                          <include>**/NavigatingWebsiteSuite_1*.java</include>
                                      <include>**/NavigatingWebsiteSuite_2*.java</include>
                                         <include>**/SortingSuite*.java</include>
