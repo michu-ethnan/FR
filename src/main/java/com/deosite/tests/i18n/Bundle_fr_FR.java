@@ -33,15 +33,15 @@ public class Bundle_fr_FR extends ListResourceBundle {
 
                 //Headers
                 {"account header", "Compte"},
-                {"Ogród header", "Zahrada "},
-                {"Jadalnia header", "Jídelna "},
-                {"Kuchnia header", "Kuchyň "},
-                {"Łazienka i garderoba header", "Výrobky pro domácnost "},
-                {"Dekoracje header", "Textil "},
-                {"Świat dziecka header", "Dětský svět "},
-                {"Nowości header", "Novinky "},
-                {"Wyprzedaż header", "Vyprodej "},
-                {"Marki header", "Značky a kolekce"},
+                {"Ogród header", "Jardin "},
+                {"Jadalnia header", "Arts de la table "},
+                {"Kuchnia header", "Cuisine "},
+                {"Łazienka i garderoba header", "Buanderie et entretien "},
+                {"Dekoracje header", "Déco "},
+                {"Świat dziecka header", "Univers de l'enfant "},
+                {"Nowości header", "Nouveautés "},
+                {"Wyprzedaż header", "Soldes "},
+                {"Marki header", "Marques"},
 
 
 
