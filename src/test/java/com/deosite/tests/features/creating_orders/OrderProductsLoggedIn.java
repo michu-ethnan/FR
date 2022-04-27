@@ -108,13 +108,14 @@ public class OrderProductsLoggedIn {
     }
 
     @And("he changes shipping address")
-    public void actor_changes_shipping_address() {
+    public void actor_changes_shipping_address() throws InterruptedException {
         theActorInTheSpotlight().attemptsTo(
                 Click.on(CheckoutPage.SHIPPING_ADDRESS_CHECKBOX),
                 Click.on(CheckoutPage.SHIPPING_ADDRESS_SELECT),
-                SelectShippingAddress.byShippingAddress(1),
-                WaitUntil.the(CheckoutPage.SUBMIT_BUTTON, isClickable())
+                SelectShippingAddress.byShippingAddress(2),
+                WaitUntil.the(CheckoutPage.SUBMIT_BUTTON, isClickable()).forNoMoreThan(100).seconds()
         );
+        Thread.sleep(3000);
 
     }
 

@@ -33,9 +33,9 @@ SelectLanguage.byIndexNumber(4)
 
 
         }
-        if (chooseLanguage.contains("France")){
+        if (chooseLanguage.contains("Italy")){
             actor.attemptsTo(
-SelectLanguage.byIndexNumber(3)
+SelectLanguage.byIndexNumber(5)
             );
 
 
