@@ -267,6 +267,7 @@
                                       <include>**/OrderingLoggedInSuite_1.java</include>
                                      <include>**/OrderingLoggedInSuite_2.java</include>
                                       <include>**/OrderingLoggedInSuite_3.java</include>
+                                <include>**/ApplyAllFiltersSuite*.java</include>
                                     <include>**/FilteringTestSuite*.java</include>
                                       <include>**/LoggingInSuite*.java</include>
                                          <include>**/NavigatingWebsiteSuite_1*.java</include>
@@ -280,8 +281,8 @@
 
                             </includes>
                             <parallel>suites</parallel>
-                            <threadCount>20</threadCount>
-                            <forkCount>20</forkCount>
+                            <threadCount>10</threadCount>
+                            <forkCount>10</forkCount>
                             <reuseForks>false</reuseForks>
                             <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
                             <systemPropertyVariables>
